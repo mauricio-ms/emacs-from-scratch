@@ -21,25 +21,48 @@ A more simpler way to define key bindings is using the General El package:
  "C-M-j" 'counsel-switch-buffer)
 ```
 
+# Ivy Commands
+In a list buffer:
+- M-o gives to you a list of commands about that item
+- C-c C-o opens the result list into a new buffer
+
 # Evil Mode Commands
 
 ## Switch between Modes
-i -> Insert Mode
-ESC -> Vim Mode
-C-z -> Emacs Mode
+- i -> Insert Mode
+- ESC -> Vim Mode
+- C-z -> Emacs Mode
 
 ## Cursor Control
-j -> Up Line
-k -> Down Line
-C-v -> Mark Lines
-shift-5 -> Go to End Delimiter
+- j -> Up Line
+- k -> Down Line
+- C-v -> Mark Lines
+- shift-5 -> Go to End Delimiter
 
 ## Buffer Control
-q -> Close
-dd -> Delete Line
-u -> Undo
+- q -> Close
+- dd -> Delete Line
+- u -> Undo
 
 ## Window Management
-C-w v -> Vertical Split
-C-w s -> Horizontal Split
-C-w c -> Close Window
+- C-w v -> Vertical Split
+- C-w s -> Horizontal Split
+- C-w c -> Close Window
+
+# Magit Commands
+- C-x g -> Git status into a new buffer
+- ? -> Opens Magit options
+
+## Magit Buffer
+- TAB -> Collapse/Uncollapse content
+
+### Unstaged Changes Section
+- u -> Unstage the file on cursor
+- U -> Unstage all files
+
+### Staged Changes Section
+- s -> Stage the file on cursor
+- S -> Stage all files
+
+### Diff File Section
+- s -> Stage the selected content
