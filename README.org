@@ -1,68 +1,86 @@
-# Commands
+* Commands
 - M-x M-o -> List more options about the command
 - C-h f   -> Describre function
 
-# Key Bindings
+* Key Bindings
 Setting a function from a key binding:
-```lisp
+
+#+begin_src emacs-lisp
 (global-set-key (kbd "C-M-j") 'counsel-switch-buffer)
-```
+#+end_src
 
 Define a key for a specific key map:
-```lisp
+#+begin_src emacs-lisp
 (define-key emacs-lisp-mode-map (kbd "C-x M-t") 'counsel-load-theme)
-```
+#+end_src
 
 A more simpler way to define key bindings is using the General El package:
-```lisp
+#+begin_src emacs-lisp
 (use-package general)
 
 (general-define-key
  "C-M-j" 'counsel-switch-buffer)
-```
+#+end_src
 
-# Ivy Commands
+* Ivy Commands
 In a list buffer:
 - M-o gives to you a list of commands about that item
 - C-c C-o opens the result list into a new buffer
 
-# Evil Mode Commands
+* Evil Mode Commands
 
-## Switch between Modes
+** Switch between Modes
 - i -> Insert Mode
 - ESC -> Vim Mode
 - C-z -> Emacs Mode
 
-## Cursor Control
+** Cursor Control
 - j -> Up Line
 - k -> Down Line
 - C-v -> Mark Lines
 - shift-5 -> Go to End Delimiter
 
-## Buffer Control
+** Buffer Control
 - q -> Close
 - dd -> Delete Line
 - u -> Undo
 
-## Window Management
+** Window Management
 - C-w v -> Vertical Split
 - C-w s -> Horizontal Split
 - C-w c -> Close Window
 
-# Magit Commands
+* Magit Commands
 - C-x g -> Git status into a new buffer
 - ? -> Opens Magit options
 
-## Magit Buffer
+** Magit Buffer
 - TAB -> Collapse/Uncollapse content
 
-### Unstaged Changes Section
+*** Unstaged Changes Section
 - u -> Unstage the file on cursor
 - U -> Unstage all files
 
-### Staged Changes Section
+*** Staged Changes Section
 - s -> Stage the file on cursor
 - S -> Stage all files
 
-### Diff File Section
+*** Diff File Section
 - s -> Stage the selected content
+
+*** Commit
+- C-c C-c -> Effectively create the commit
+
+* Org Mode
+| Command         | Description                      |
+| ----            | ----                             |
+| C-c C-l         | Add link                         |
+| C-c C-o         | Open link                        |
+| TAB             | Auto format tables               |
+| SHIFT-ENTER     | Add header                       |
+| ALT-ENTER       | Add list item                    |
+| C-c C-x C-b     | Toggle checkbox                  |
+| ALT-SHIFT-ENTER | Add checkbox list item           |
+| C-c C-t         | Change the TODO state of an item |
+|                 |                                  |
+
