@@ -93,4 +93,13 @@ In a list buffer:
 
 
 
+* LSP Mode
+| Command                         | Description                                  |
+| C-c l g r                       | Find references                              |
+| C-c l g g                       | Find definition                              |
+| C-c l r r                       | Rename                                       |
+| M-X lsp-format-buffer           | Format Buffer                                |
+| M-x lsp-ui-peek-find-references | Find references inline                       |
+| M-x lsp-treemacs-symbols        | Display tree of symbols for the current file |
+| M-x lsp-ivy-workspace-symbol    | Find symbols with ivy                        |
 

@@ -48,6 +48,7 @@
 		term-mode-hook
 		shell-mode-hook
 		eshell-mode-hook
+		treemacs-mode-hook
 		sql-interactive-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
@@ -354,17 +355,57 @@
 (use-package visual-fill-column
   :hook (org-mode . efs/org-mode-visual-fill))
 
+(defun efs/lsp-mode-setup ()
+  (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
+  (lsp-headerline-breadcrumb-mode))
+
+(use-package lsp-mode
+  :commands (lsp lsp-deferred)
+  :hook (lsp-mode . efs/lsp-mode-setup)
+  :init
+  (setq lsp-keymap-prefix "C-c l")  ;; Or 'C-l', 's-l'
+  :config
+  (lsp-enable-which-key-integration t))
+
+(use-package typescript-mode
+  :mode "\\.ts\\'"
+  :hook (typescript-mode . lsp-deferred)
+  :config
+  (setq typescript-indent-level 2))
+
+(use-package company
+  :after lsp-mode
+  :hook (lsp-mode . company-mode)
+  :bind (:map company-active-map
+         ("<tab>" . company-complete-selection))
+        (:map lsp-mode-map
+         ("<tab>" . company-indent-or-complete-common))
+  :custom
+  (company-minimum-prefix-length 1)
+  (company-idle-delay 0.0))
+
+(use-package lsp-ui
+  :hook (lsp-mode . lsp-ui-mode)
+  :custom
+  (lsp-ui-doc-position 'bottom))
+
+(use-package lsp-treemacs
+  :after lsp)
+
+(use-package lsp-ivy
+  :after lsp)
+
+(use-package evil-nerd-commenter
+  :bind ("M-/" . evilnc-comment-or-uncomment-lines))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("5f128efd37c6a87cd4ad8e8b7f2afaba425425524a68133ac0efd87291d05874" "7e377879cbd60c66b88e51fad480b3ab18d60847f31c435f15f5df18bdb18184" "636b135e4b7c86ac41375da39ade929e2bd6439de8901f53f88fde7dd5ac3561" "0c08a5c3c2a72e3ca806a29302ef942335292a80c2934c1123e8c732bb2ddd77" "f053f92735d6d238461da8512b9c071a5ce3b9d972501f7a5e6682a90bf29725" "aec7b55f2a13307a55517fdf08438863d694550565dee23181d2ebd973ebd6b8" "2dd4951e967990396142ec54d376cced3f135810b2b69920e77103e0bcedfba9" "1a1ac598737d0fcdc4dfab3af3d6f46ab2d5048b8e72bc22f50271fd6d393a00" default)))
  '(package-selected-packages
    (quote
-    (visual-fill-column org-bullets forge evil-magit magit counsel-projectile projectile hydra evil-collection evil general all-the-icons doom-themes helpful graphql-lsp graphiql graphql-language-service lsp-mode request graphql-mode counsel ivy-rich sqlformat doom-modeline use-package ivy command-log-mode))))
+    (evil-nerd-commenter lsp-ivy lsp-treemacs javascript-mode which-key visual-fill-column use-package typescript-mode rainbow-delimiters org-bullets lsp-ui ivy-rich hydra helpful general forge evil-collection doom-themes doom-modeline counsel-projectile company command-log-mode all-the-icons))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
