@@ -72,15 +72,25 @@ In a list buffer:
 - C-c C-c -> Effectively create the commit
 
 * Org Mode
-| Command         | Description                      |
-| ----            | ----                             |
-| C-c C-l         | Add link                         |
-| C-c C-o         | Open link                        |
-| TAB             | Auto format tables               |
-| SHIFT-ENTER     | Add header                       |
-| ALT-ENTER       | Add list item                    |
-| C-c C-x C-b     | Toggle checkbox                  |
-| ALT-SHIFT-ENTER | Add checkbox list item           |
-| C-c C-t         | Change the TODO state of an item |
-|                 |                                  |
+| Command             | Description                      |
+| ----                | ----                             |
+| M-x org-agenda      | Display agenda options           |
+| M-x org-capture     | Select a capture template        |
+| C-c C-l             | Add link                         |
+| C-c C-o             | Open link                        |
+| TAB                 | Auto format tables               |
+| SHIFT-ENTER         | Add header                       |
+| ALT-ENTER           | Add list item                    |
+| C-c C-x C-b         | Toggle checkbox                  |
+| ALT-SHIFT-ENTER     | Add checkbox list item           |
+| C-c C-t             | Change the TODO state of an item |
+| M-x counsel-org-tag | Add tag to item                  |
+| C-c C-q             | Show Tags                        |
+| C-c C-x e           | Set effort property              |
+| C-c C-w             | Switch items between org files   |
+| C-c C-x p           | Set property                     |
+ 
+
+
+
 
