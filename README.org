@@ -72,8 +72,7 @@ In a list buffer:
 - C-c C-c -> Effectively create the commit
 
 * Org Mode
-| Command             | Description                      |
-| ----                | ----                             |
+| COMMAND             | DESCRIPTION                      |
 | M-x org-agenda      | Display agenda options           |
 | M-x org-capture     | Select a capture template        |
 | C-c C-l             | Add link                         |
@@ -89,10 +88,6 @@ In a list buffer:
 | C-c C-x e           | Set effort property              |
 | C-c C-w             | Switch items between org files   |
 | C-c C-x p           | Set property                     |
- 
-
-
-
 * LSP Mode
 | Command                         | Description                                  |
 | C-c l g r                       | Find references                              |
@@ -103,3 +98,13 @@ In a list buffer:
 | M-x lsp-treemacs-symbols        | Display tree of symbols for the current file |
 | M-x lsp-ivy-workspace-symbol    | Find symbols with ivy                        |
 
+* Term Mode 
+| COMMAND | DESCRIPTION           |
+| C-c C-p | Go to previous prompt |
+| C-c C-n | Go to next prompt     |
+| COMMAND | DESCRIPTION           |
+| C-c C-p | Go to previous prompt |
+| C-c C-n | Go to next prompt     |
+| C-c C-k | Enable term char mode |
+| C-c C-j | Enable term line mode |
+|         |                       |
