@@ -239,7 +239,7 @@
   
   (setq org-todo-keywords
     '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
-      (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANC(k@)")))
+      (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAITING_TO_DEPLOY(w)" "INTERRUPT(i@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANC(k@)")))
 
   (setq org-refile-targets
     '(("archive.org" :maxlevel . 1)
@@ -270,6 +270,10 @@
         ((org-agenda-overriding-header "Next Tasks")))
       (tags-todo "agenda/ACTIVE" ((org-agenda-overriding-header "Active Projects")))))
 
+     ("a" "Active Tasks"
+      ((todo "ACTIVE"
+             ((org-agenda-overriding-header "Active Tasks")))))
+     
     ("n" "Next Tasks"
      ((todo "NEXT"
         ((org-agenda-overriding-header "Next Tasks")))))
