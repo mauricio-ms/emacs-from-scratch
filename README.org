@@ -1,7 +1,7 @@
 * Commands
-- M-x M-o -> List more options about the command
-- C-h f   -> Describre function
-
+| COMMAND | DESCRIPTION                         |
+| M-x M-o | List more options about the command |
+| C-h f   | Describe function                   |
 * Key Bindings
 Setting a function from a key binding:
 
@@ -23,54 +23,53 @@ A more simpler way to define key bindings is using the General El package:
 #+end_src
 
 * Ivy Commands
-In a list buffer:
-- M-o gives to you a list of commands about that item
-- C-c C-o opens the result list into a new buffer
-
+** List Buffer
+| COMMAND | DESCRIPTION                                     |
+| M-o     | Gives to you a list of commands about that item |
+| C-c C-o | Opens the result list into a new buffer         |
 * Evil Mode Commands
-
 ** Switch between Modes
-- i -> Insert Mode
-- ESC -> Vim Mode
-- C-z -> Emacs Mode
-
+| COMMAND | DESCRITPION |
+| i       | Insert Mode |
+| ESC     | Vim Mode    |
+| C-z     | Emacs Mode  |
 ** Cursor Control
-- j -> Up Line
-- k -> Down Line
-- C-v -> Mark Lines
-- shift-5 -> Go to End Delimiter
-
+| COMMAND | DESCRIPTION         |
+| j       | Up Line             |
+| k       | Down Line           |
+| C-v     | Mark Lines          |
+| shift-5 | Go to End Delimiter |
 ** Buffer Control
-- q -> Close
-- dd -> Delete Line
-- u -> Undo
-
+| COMMAND | DESCRIPTION |
+| q       | Close       |
+| dd      | Delete Line |
+| u       | Undo        |
 ** Window Management
-- C-w v -> Vertical Split
-- C-w s -> Horizontal Split
-- C-w c -> Close Window
-
+| COMMAND | DESCRIPTION      |
+| C-w v   | Vertical Split   |
+| C-w s   | Horizontal Split |
+| C-w c   | Close Window     |
 * Magit Commands
-- C-x g -> Git status into a new buffer
-- ? -> Opens Magit options
-
+| COMMAND | DESCRIPTION                  |
+| C-x g   | Git status into a new buffer |
+| ?       | Opens Magit options          |
 ** Magit Buffer
-- TAB -> Collapse/Uncollapse content
-
+| COMMAND | DESCRIPTION                 |
+| TAB     | Collapse/Uncollapse content |
 *** Unstaged Changes Section
-- u -> Unstage the file on cursor
-- U -> Unstage all files
-
+| COMMAND | DESCRIPTION                |
+| u       | Unstage the file on cursor |
+| U       | Unstage all files          |
 *** Staged Changes Section
-- s -> Stage the file on cursor
-- S -> Stage all files
-
+| COMMAND | DESCRIPTION              |
+| s       | Stage the file on cursor |
+| S       | Stage all files          |
 *** Diff File Section
-- s -> Stage the selected content
-
+| COMMAND | DESCRIPTION                |
+| s       | Stage the selected content |
 *** Commit
-- C-c C-c -> Effectively create the commit
-
+| COMMAND | DESCRIPTION                   |
+| C-c C-c | Effectively create the commit |
 * Org Mode
 | COMMAND             | DESCRIPTION                      |
 | M-x org-agenda      | Display agenda options           |
@@ -89,7 +88,7 @@ In a list buffer:
 | C-c C-w             | Switch items between org files   |
 | C-c C-x p           | Set property                     |
 * LSP Mode
-| Command                         | Description                                  |
+| COMMAND                         | DESCRIPTION                                  |
 | C-c l g r                       | Find references                              |
 | C-c l g g                       | Find definition                              |
 | C-c l r r                       | Rename                                       |
@@ -97,14 +96,18 @@ In a list buffer:
 | M-x lsp-ui-peek-find-references | Find references inline                       |
 | M-x lsp-treemacs-symbols        | Display tree of symbols for the current file |
 | M-x lsp-ivy-workspace-symbol    | Find symbols with ivy                        |
-
 * Term Mode 
-| COMMAND | DESCRIPTION           |
-| C-c C-p | Go to previous prompt |
-| C-c C-n | Go to next prompt     |
-| COMMAND | DESCRIPTION           |
-| C-c C-p | Go to previous prompt |
-| C-c C-n | Go to next prompt     |
-| C-c C-k | Enable term char mode |
-| C-c C-j | Enable term line mode |
-|         |                       |
+| COMMAND                   | DESCRIPTION           |
+| C-c C-p                   | Go to previous prompt |
+| C-c C-n                   | Go to next prompt     |
+| C-c C-k                   | Enable term char mode |
+| C-c C-j                   | Enable term line mode |
+| M-x counsel-shell-history | Shell command history |
+* EShell 
+** Pipe output commands directly into an Emacs buffer
+#+begin_src eshell
+echo "Hello!" > #<buffer name-buffer>
+#+end_src
+** Commands
+| COMMAND | DESCRITPTION    |
+| C-r     | Counsel history |
